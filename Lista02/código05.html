@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Encontrar o Maior Valor</title>
+</head>
+<body>
+    <h1>Encontrar o Maior Valor</h1>
+    <p>Informe três números inteiros:</p>
+    <input type="text" id="numero1" placeholder="Número 1">
+    <input type="text" id="numero2" placeholder="Número 2">
+    <input type="text" id="numero3" placeholder="Número 3">
+    <button onclick="encontrarMaiorValor()">Encontrar Maior</button>
+    <p id="resultado"></p>
+
+    <script>
+        function encontrarMaiorValor() {
+            
+            var num1 = parseInt(document.getElementById("numero1").value);
+            var num2 = parseInt(document.getElementById("numero2").value);
+            var num3 = parseInt(document.getElementById("numero3").value);
+
+            
+            var maior = num1;
+            if (num2 > maior) {
+                maior = num2;
+            }
+            if (num3 > maior) {
+                maior = num3;
+            }
+
+            document.getElementById("resultado").innerHTML = "O maior valor é: " + maior;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Soma de Números Antecessores</title>
+</head>
+<body>
+    <h1>Calculadora de Soma de Números Antecessores</h1>
+    <p>Informe um número inteiro positivo:</p>
+    <input type="text" id="numero" placeholder="Digite o número">
+    <button onclick="calcularSomaAntecessores()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSomaAntecessores() {
+            
+            var numero = parseInt(document.getElementById("numero").value);
+
+            
+            if (isNaN(numero) || numero < 1) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira um número inteiro positivo válido.";
+                return;
+            }
+
+           
+            var soma = 0;
+            for (var i = 1; i < numero; i++) {
+                soma += i;
+            }
+
+            document.getElementById("resultado").innerHTML = "A soma dos números antecessores é: " + soma;
+        }
+    </script>
+</body>
+</html>

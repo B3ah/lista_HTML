@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contagem de Vogais</title>
+</head>
+<body>
+    <h1>Contagem de Vogais</h1>
+    <p>Informe uma palavra:</p>
+    <input type="text" id="palavra" placeholder="Digite a palavra">
+    <button onclick="contarVogais()">Contar Vogais</button>
+    <p id="resultado"></p>
+
+    <script>
+        function contarVogais() {
+            
+            var palavra = document.getElementById("palavra").value.toLowerCase();
+
+            
+            var vogais = ['a', 'e', 'i', 'o', 'u'];
+            var contador = 0;
+
+            for (var i = 0; i < palavra.length; i++) {
+                if (vogais.includes(palavra[i])) {
+                    contador++;
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = "A palavra tem " + contador + " vogais.";
+        }
+    </script>
+</body>
+</html>

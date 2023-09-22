@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Fatorial</title>
+</head>
+<body>
+    <h1>Calculadora de Fatorial</h1>
+    <p>Informe um número inteiro positivo:</p>
+    <input type="text" id="numero" placeholder="Digite o número">
+    <button onclick="calcularFatorial()">Calcular Fatorial</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularFatorial() {
+            
+            var numero = parseInt(document.getElementById("numero").value);
+
+           
+            if (isNaN(numero) || numero < 0) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira um número inteiro positivo válido.";
+                return;
+            }
+
+            
+            var fatorial = 1;
+            for (var i = 1; i <= numero; i++) {
+                fatorial *= i;
+            }
+
+            document.getElementById("resultado").innerHTML = "O fatorial de " + numero + " é: " + fatorial;
+        }
+    </script>
+</body>
+</html>

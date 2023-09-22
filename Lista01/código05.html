@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trocar Valores de Variáveis</title>
+</head>
+<body>
+    <h1>Trocar Valores de Variáveis</h1>
+    <p>Informe dois valores inteiros:</p>
+    <label for="valorA">Valor A:</label>
+    <input type="text" id="valorA" placeholder="Digite o valor A">
+    <br>
+    <label for="valorB">Valor B:</label>
+    <input type="text" id="valorB" placeholder="Digite o valor B">
+    <br>
+    <button onclick="trocarValores()">Trocar Valores</button>
+    <p id="resultado"></p>
+
+    <script>
+        function trocarValores() {
+           
+            var valorA = parseInt(document.getElementById("valorA").value);
+            var valorB = parseInt(document.getElementById("valorB").value);
+
+           
+            var temp = valorA;
+            valorA = valorB;
+            valorB = temp;
+
+            document.getElementById("resultado").innerHTML = "Valores trocados: A = " + valorA + ", B = " + valorB;
+        }
+    </script>
+</body>
+</html>

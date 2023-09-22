@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operação Matemática</title>
+</head>
+<body>
+    <h1>Operação Matemática</h1>
+    <p>Informe três números:</p>
+    <input type="text" id="numero1" placeholder="Número 1">
+    <input type="text" id="numero2" placeholder="Número 2">
+    <input type="text" id="numero3" placeholder="Número 3">
+    <button onclick="realizarOperacao()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function realizarOperacao() {
+            
+            var num1 = parseFloat(document.getElementById("numero1").value);
+            var num2 = parseFloat(document.getElementById("numero2").value);
+            var num3 = parseFloat(document.getElementById("numero3").value);
+
+           
+            var resultado = num1 + num2 * num3;
+
+            document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Equação do 2º Grau</title>
+</head>
+<body>
+    <h1>Calculadora de Equação do 2º Grau</h1>
+    <p>Insira os coeficientes da equação:</p>
+    <label for="coeficienteA">Coeficiente a:</label>
+    <input type="text" id="coeficienteA" placeholder="Digite a">
+    <br>
+    <label for="coeficienteB">Coeficiente b:</label>
+    <input type="text" id="coeficienteB" placeholder="Digite b">
+    <br>
+    <label for="coeficienteC">Coeficiente c:</label>
+    <input type="text" id="coeficienteC" placeholder="Digite c">
+    <br>
+    <button onclick="calcularEquacao()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularEquacao() {
+            
+            var a = parseFloat(document.getElementById("coeficienteA").value);
+            var b = parseFloat(document.getElementById("coeficienteB").value);
+            var c = parseFloat(document.getElementById("coeficienteC").value);
+
+            
+            var delta = b * b - 4 * a * c;
+
+            
+            var x1, x2;
+            if (delta > 0) {
+                x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                document.getElementById("resultado").innerHTML = "As raízes são: x1 = " + x1.toFixed(2) + " e x2 = " + x2.toFixed(2);
+            } else if (delta === 0) {
+                x1 = -b / (2 * a);
+                document.getElementById("resultado").innerHTML = "A raiz é única: x1 = " + x1.toFixed(2);
+            } else {
+                document.getElementById("resultado").innerHTML = "Não existem raízes reais.";
+            }
+        }
+    </script>
+</body>
+</html>

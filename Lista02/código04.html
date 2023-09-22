@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificar se São Múltiplos</title>
+</head>
+<body>
+    <h1>Verificar se São Múltiplos</h1>
+    <p>Informe dois números:</p>
+    <input type="text" id="a" placeholder="Digite o valor de a">
+    <input type="text" id="b" placeholder="Digite o valor de b">
+    <button onclick="verificarMultiplos()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarMultiplos() {
+            
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+
+            
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira valores válidos.";
+            } else if (a % b === 0 || b % a === 0) {
+                document.getElementById("resultado").innerHTML = "São múltiplos.";
+            } else {
+                document.getElementById("resultado").innerHTML = "Não são múltiplos.";
+            }
+        }
+    </script>
+</body>
+</html>

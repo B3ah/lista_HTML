@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Elevar um Número ao Quadrado</title>
+</head>
+<body>
+    <h1>Elevar um Número ao Quadrado</h1>
+    <p>Informe um número inteiro:</p>
+    <input type="text" id="numero" placeholder="Digite o número">
+    <button onclick="elevarAoQuadrado()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function elevarAoQuadrado() {
+            
+            var num = parseInt(document.getElementById("numero").value);
+
+            
+            if (isNaN(num)) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira um número inteiro válido.";
+                return;
+            }
+
+            
+            var quadrado = num * num;
+
+            document.getElementById("resultado").innerHTML = "O valor elevado ao quadrado é: " + quadrado;
+        }
+    </script>
+</body>
+</html>
